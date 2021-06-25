@@ -13,9 +13,6 @@
 					email: {
 						required: true,
 						email: true
-					},
-					message: {
-						url:"https://wa.me/9645732562?text=How%20are%20you%20?"
 					}
 				},
 				messages: {
@@ -37,8 +34,8 @@
 				      beforeSend: function() { 
 				      	$submit.css('display', 'block').text(waitText);
 				      },
-				      success: function(msg) {
-		               if (msg == 'OK') {
+				      success: function() {
+
 		               	$('#form-message-warning').hide();
 				            setTimeout(function(){
 		               		$('#contactForm').fadeIn();
@@ -61,11 +58,7 @@
 											});
 		               	}, 1400);
 			               
-			            } else {
-			               $('#form-message-warning').html(msg);
-				            $('#form-message-warning').fadeIn();
-				            $submit.css('display', 'none');
-			            }
+			            
 				      },
 				      error: function() {
 				      	$('#form-message-warning').html("Something went wrong. Please try again.");
